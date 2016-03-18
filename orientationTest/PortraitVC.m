@@ -23,6 +23,12 @@
     return UIInterfaceOrientationPortrait;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [[UIDevice currentDevice] performSelector:NSSelectorFromString(@"setOrientation:") withObject:(__bridge id)((void*)UIInterfaceOrientationPortrait)];
+}
 
 #pragma mark -
 #pragma mark - Actions

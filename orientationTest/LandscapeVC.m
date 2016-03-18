@@ -24,6 +24,12 @@
     return UIInterfaceOrientationLandscapeLeft;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    [[UIDevice currentDevice] performSelector:NSSelectorFromString(@"setOrientation:") withObject:(__bridge id)((void*)UIInterfaceOrientationLandscapeLeft)];
+}
 
 #pragma mark -
 #pragma mark - Orintation stuff
